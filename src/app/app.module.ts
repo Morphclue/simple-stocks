@@ -5,20 +5,20 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {StocksService} from "./services/stocks.service";
-import { SummaryComponent } from './components/summary/summary.component';
+import {SummaryComponent} from './components/summary/summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SummaryComponent
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [StocksService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

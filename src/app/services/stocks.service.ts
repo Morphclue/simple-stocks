@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 let stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
@@ -12,13 +12,14 @@ export interface StockInterface {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StocksService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  get(){
+  get() {
     return stocks.slice();
   }
 
@@ -33,7 +34,7 @@ export class StocksService {
   }
 
   load(symbols: Array<string>) {
-    if(symbols) {
+    if (symbols) {
       return this.httpClient.get<Array<StockInterface>>(service + '/stocks/snapshot?symbols=' + symbols.join())
     }
     return {};
